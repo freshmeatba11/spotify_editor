@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import SideMenu from "@/components/sideMenu/sideMenu";
+import clsx from "clsx";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + " flex flex-row"}>
+      <body
+        className={clsx(
+          inter.className,
+          "flex flex-row",
+          "p-[var(--panel-gap)]"
+        )}
+      >
         <SideMenu />
         {children}
       </body>

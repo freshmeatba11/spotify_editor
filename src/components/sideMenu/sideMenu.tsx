@@ -1,19 +1,26 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import clsx from "clsx";
 
-import { Button } from "../ui/button";
-import { Home as HomeIcon, Search } from "lucide-react";
-
 import SideMenuTop from "./sideMenuTop";
+import SideMenuBottom from "./sideMenuBottom";
 
 type Props = {};
 
 const SideMenu = (props: Props) => {
+  const [isSideMenuOpen, setIsSideMenuOpen] = useState(true);
+  const sideMenuWidth = isSideMenuOpen ? "w-[340px]" : "w-[72px]";
   return (
-    <div className={clsx("border border-red-600 w-[340px]")}>
+    <div
+      className={clsx(
+        "@container/sidemenu",
+        "w-[340px]",
+        "flex flex-col gap-[var(--panel-gap)]",
+        sideMenuWidth
+      )}
+    >
       <SideMenuTop />
-      SideMenu
+      <SideMenuBottom {...{ setIsSideMenuOpen }} />
     </div>
   );
 };
