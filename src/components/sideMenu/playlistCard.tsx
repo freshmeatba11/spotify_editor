@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 type Props = {
   key: string;
   id: string;
@@ -20,11 +22,11 @@ const PlaylistCard = ({
   const hideText = isSideMenuOpen ? "" : "hidden";
   return (
     <div className={clsx("w-full p-2", "flex gap-3")}>
-      <img
-        src={images}
-        alt={`${name}-cover`}
-        className={clsx("w-12 h-12 rounded")}
-      />
+      <Avatar className={clsx("w-12 h-12 rounded")}>
+        <AvatarImage src={images} alt={`${name}-cover`} />
+        <AvatarFallback>{images}</AvatarFallback>
+      </Avatar>
+
       <div className={clsx("w-full", hideText)}>
         <p
           className={clsx(
