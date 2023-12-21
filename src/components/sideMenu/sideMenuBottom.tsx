@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { Disc3, Plus } from "lucide-react";
 
 import { Button } from "../ui/button";
-import PlaylistWithTabs from "./playlistWithTabs";
+import PlaylistList from "./playlistList";
 
 const LibraryButton = ({ onClick }: { onClick: () => void }) => {
   return (
@@ -41,9 +41,10 @@ const PlusButton = () => {
 };
 
 type Props = {
+  isSideMenuOpen: boolean;
   setIsSideMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
-const SideMenuBottom = ({ setIsSideMenuOpen }: Props) => {
+const SideMenuBottom = ({ isSideMenuOpen, setIsSideMenuOpen }: Props) => {
   const onClickLibrary = () => setIsSideMenuOpen((prev) => !prev);
   return (
     <div className={clsx("rounded-lg", "bg-[var(--sideMenu-bg)]")}>
@@ -53,11 +54,11 @@ const SideMenuBottom = ({ setIsSideMenuOpen }: Props) => {
       </div>
       <div
         className={clsx(
-          "pt-0 px-1 pb-1",
-          "@[75px]/sidemenu:py-2 @[75px]/sidemenu:px-4"
+          "pt-2 px-1 pb-1",
+          "@[75px]/sidemenu:py-2 @[75px]/sidemenu:px-3"
         )}
       >
-        <PlaylistWithTabs />
+        <PlaylistList isSideMenuOpen={isSideMenuOpen} />
       </div>
     </div>
   );

@@ -65,9 +65,13 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
     --sideMenu-bg: #131313;
     --sideMenu-text: #aaaaaa;
     --sideMenu-text-hover: #ffffff;
+
+    --playlist-card-text: #ffffff;
+    --playlist-card-subtext: #a7a7a7;
   }
 }
 

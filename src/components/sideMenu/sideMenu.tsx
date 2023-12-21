@@ -20,7 +20,7 @@ const SideMenu = (props: Props) => {
       )}
     >
       <SideMenuTop />
-      <SideMenuBottom {...{ setIsSideMenuOpen }} />
+      <SideMenuBottom {...{ isSideMenuOpen, setIsSideMenuOpen }} />
     </div>
   );
 };
